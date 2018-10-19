@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Category {
 
@@ -40,4 +41,6 @@ public class Category {
 	public String toString() {
 		return categoryName;
 	}
+
+}
 }
