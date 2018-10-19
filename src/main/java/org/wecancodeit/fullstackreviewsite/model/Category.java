@@ -7,10 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-<<<<<<< Updated upstream
-=======
+
 @Entity
->>>>>>> Stashed changes
 public class Category {
 
 	@Id
@@ -43,4 +41,6 @@ public class Category {
 	public String toString() {
 		return categoryName;
 	}
+
+}
 }

@@ -11,9 +11,6 @@ public class Review {
 	@Id
 	@GeneratedValue
 	private Long id;
-<<<<<<< Updated upstream
-	
-=======
 	private String languageName;
 	private int yearCreated;
 	private String reviewText;
@@ -50,6 +47,4 @@ public class Review {
 	public int getYearCreated() {
 		return yearCreated;
 	}
-
->>>>>>> Stashed changes
 }
