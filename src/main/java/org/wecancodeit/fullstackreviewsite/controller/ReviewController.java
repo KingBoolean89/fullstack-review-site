@@ -16,14 +16,14 @@ public class ReviewController {
 	ReviewRepository reviewRepo;
 
 	@RequestMapping("")
-	public String listPeople(Model model) {
+	public String listReviews(Model model) {
 		model.addAttribute("reviews", reviewRepo.findAll());
 		return "reviews/index";
 	}
 
 	@RequestMapping("/{id}")
-	public String listPerson(@PathVariable(value = "id") Long id,Model model) {
-		model.addAttribute("reviews", reviewRepo.findById(id).get());
+	public String listReview(@PathVariable(value = "id") Long id,Model model) {
+		model.addAttribute("review", reviewRepo.findById(id).get());
 		return "reviews/review";
 	}
 }

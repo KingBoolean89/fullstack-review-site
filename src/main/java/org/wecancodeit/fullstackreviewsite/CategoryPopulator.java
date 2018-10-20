@@ -20,24 +20,26 @@ public class CategoryPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Category scriptingLanguages = new Category("Scripting Languages");
-		Category objectOrientedLanguages = new Category("Object-Oriented Languages");
-		Category functionalLanguages = new Category("Shitty Languages");
+		Category scriptingLanguages = new Category("Scripting Languages", "Programming languages that support special run-time environment programs that automate the execution of tasks. Scripting languages are interpreted by programs, not compiled.");
+		Category objectOrientedLanguages = new Category("Object-Oriented Languages", "Programming languages made to be used with the object-oriented programming paradigm, focusing on creating object-class instances to be modified and interpreted.");
+		Category functionalLanguages = new Category("Shitty Languages", "Programming languages that are designed to handle symbolic computation and list processing applications. These languages are based on mathematical functions. Subsequently, they are also hell.");
 		
 		scriptingLanguages = categoryRepo.save(scriptingLanguages);
 		objectOrientedLanguages = categoryRepo.save(objectOrientedLanguages);
 		functionalLanguages = categoryRepo.save(functionalLanguages);
 		
-		Review python = new Review("Python", 1989, "Placeholder", objectOrientedLanguages);
-		Review haskell = new Review("Haskell", 1990, "Placeholder", functionalLanguages);
-		Review html = new Review("HTML", 1990, "Placeholder", scriptingLanguages);
-		Review java = new Review("Java", 1996, "Placeholder", objectOrientedLanguages);
-		Review cPlusPlus = new Review("C++", 1983, "Placeholder", objectOrientedLanguages);
+		Review html = new Review("HTML", 1990, "Placeholder", scriptingLanguages, 9L, 5L);
+		Review tads = new Review("TADS", 1988, "Placeholder", scriptingLanguages, 10L, 4L);
+		Review cPlusPlus = new Review("C++", 1983, "Placeholder", objectOrientedLanguages, 5L, 9L);
+		Review java = new Review("Java", 1996, "Placeholder", objectOrientedLanguages, 6L, 9L);
+		Review python = new Review("Python", 1989, "Placeholder", objectOrientedLanguages, 7L, 8L);
+		Review haskell = new Review("Haskell", 1990, "Placeholder", functionalLanguages, 3L, 10L);
 		
+		html = reviewRepo.save(html);
+		tads = reviewRepo.save(tads);
+		cPlusPlus = reviewRepo.save(cPlusPlus);
+		java = reviewRepo.save(java);
 		python = reviewRepo.save(python);
 		haskell = reviewRepo.save(haskell);
-		html = reviewRepo.save(html);
-		java = reviewRepo.save(java);
-		cPlusPlus = reviewRepo.save(cPlusPlus);
 	}
 }

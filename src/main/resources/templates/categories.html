@@ -1,0 +1,28 @@
+<head>
+	<title>Contacts</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Categories</h1>
+		</header>
+		<main>
+			<ul>
+				<li th:each="category : ${categories}"> <!--th:href="|/categories/${category.id}|">-->
+					<a th:href="|/categories/${category.id}|" th:text="${category.categoryName}">Category Name</a>
+					<ul>
+						<li th:each="review : ${category.reviews}">
+							<a th:href="|/reviews/${review.id}|" th:text="${review.languageName}"></a>
+							<span th:text="|User-Friendliness: ${review.userFriendliness}/10     Usefulness: ${review.usefulness}/10|"></span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</main>
+		<footer>
+			<small>&copy; 2018</small>
+		</footer>
+	</div>	
+</body>
+</html>
