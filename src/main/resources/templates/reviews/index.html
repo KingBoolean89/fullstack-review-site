@@ -10,7 +10,7 @@
 		<main>
 			<ul>
 				<li th:each="category : ${categories}">
-					<a th:href="|/category/${categories.id}|"  th:text="${category.categoryName}"></a>
+					<a th:href="|/category/${categories.id}|"  th:text="|${category.categoryName}|"></a>
 				</li>
 			</ul>
 		</main>
