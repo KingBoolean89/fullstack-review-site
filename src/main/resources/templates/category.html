@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title th:text="${category.categoryName}">Category</title>
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/category.css">
 </head>
 <body>
 	<div class="container">
@@ -10,8 +10,17 @@
 			<h1 th:text="${category.categoryName}">Name</h1>
 		</header>
 		<main>
-					<h2>What are these languages?</h2>
-					<address th:text="${category.categoryDescription}">Category Description</address>
+		 <section class="info">
+      		 <figure>
+           		<img th:src="|/images/${category.categoryImageUrl}.jpg|"/>
+        	</figure>
+			<h2>What are these languages?</h2>
+			<address th:text="${category.categoryDescription}">Category Description</address>
+			<li th:each="review : ${category.reviews}">
+				<a th:href="|/reviews/${review.id}|" th:text="${review.languageName}"></a>
+				<span th:text="|User-Friendliness: ${review.userFriendliness}/10     Usefulness: ${review.usefulness}/10|"></span>
+			</li>
+	 	</section>
 		</main>
 		<footer>
 			<a href="/categories">Back to Home</a>

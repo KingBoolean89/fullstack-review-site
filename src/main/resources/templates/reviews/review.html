@@ -10,6 +10,10 @@
 			<h1 th:text="${review.languageName}">Language Name</h1>
 		</header>
 		<main>
+		<section class = "info">
+			<figure>
+           		<img th:src="|/images/${review.reviewImageUrl}.jpg|"/>
+        	</figure>
 			<ul>
 				<li>
 					<h2>Language Type</h2>
@@ -32,6 +36,7 @@
 					<p th:text="${review.reviewText}">Review Text</p>
 				</li>
 			</ul>
+		</section>	
 		</main>
 		<footer>
 			<p><a th:href="|/categories/${review.category.id}|">Back to Language Category</a></p>

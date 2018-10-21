@@ -1,20 +1,21 @@
 package org.wecancodeit.fullstackreviewsite.model;
-
+ 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-
+ 
 @Entity
 public class Review {
-
-	@Id
+ 	@Id
 	@GeneratedValue
 	private Long id;
 	private String languageName;
 	private int yearCreated;
-	@Lob
+	private String reviewImageUrl;
+	
+ 	@Lob
 	private String reviewText;
 	private Long userFriendliness;
 	private Long usefulness;
@@ -24,28 +25,30 @@ public class Review {
 	
 	public Review() {}
 	
-	public Review(String languageName, int yearCreated, String reviewText, Category category, Long userFriendliness, Long usefulness) {
+	public Review(String languageName, int yearCreated, String reviewText, Category category, Long userFriendliness, Long usefulness, String reviewImageUrl) {
 		this.languageName = languageName;
 		this.yearCreated = yearCreated;
 		this.reviewText = reviewText;
 		this.category = category;
 		this.userFriendliness = userFriendliness;
 		this.usefulness = usefulness;
+		this.reviewImageUrl = reviewImageUrl;
+		
 	}
-
-
-	public Category getCategory() {
+ 	public Category getCategory() {
 		return category;
 	}
 	
 	public Long getId() {
 		return id;
 	}
-
-	public String getLanguageName() {
+ 	public String getLanguageName() {
 		return languageName;
 	}
-	
+	public String getReviewImageUrl() {
+		return reviewImageUrl;
+	}
+ 	
 	public String getReviewText() {
 		return reviewText;
 	}
@@ -57,8 +60,7 @@ public class Review {
 	public Long getUserFriendliness() {
 		return userFriendliness;
 	}
-
-	public int getYearCreated() {
+ 	public int getYearCreated() {
 		return yearCreated;
 	}
 }
